@@ -126,4 +126,5 @@ for(let i=arrSet.length-1; i>=0; i--){
         arrSet[i]=`Okten`
     }
 }
+
 console.log(arrSet);
