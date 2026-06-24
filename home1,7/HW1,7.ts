@@ -86,6 +86,7 @@ console.log(arr6Six)
 //
 
 let arrSeven:number[]=[100,250,50,168,120,345,188]
+//@ts-ignore
 let sum:number=0;
 for (let i=0; i< arrSeven.length; i++) {
     sum += arrSeven[i]
