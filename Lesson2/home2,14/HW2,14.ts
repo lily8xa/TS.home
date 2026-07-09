@@ -19,7 +19,7 @@ type DishType={
     tags:string[]
     userId:number
 }
-interface DishI {
+interface IDish {
     recipes: DishType[];
     total: number;
     skip: number;
@@ -27,8 +27,8 @@ interface DishI {
 }
 let mainRecept=document.getElementById('main-recept') as HTMLDivElement
 fetch('https://dummyjson.com/recipes')
-    .then((value:Response) => value.json())
-    .then((value:DishI):void=>{
+    .then(value => value.json())
+    .then((value:IDish):void=>{
         const {recipes}=value;
         console.log(recipes);
         for(const recept of recipes){

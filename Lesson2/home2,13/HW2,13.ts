@@ -1,7 +1,7 @@
 // #HmvAfRQM
 //
 // – взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
-interface TovI {
+interface ITov {
     discountPercentage: number
     discountedTotal: number
     id: number
@@ -12,17 +12,17 @@ interface TovI {
     total: number
 }
 
-interface ProductI {
+interface  IProduct {
     discountedTotal: number
     id: number
-    products:TovI[]
+    products:ITov[]
     total: number
     totalProducts: number
     totalQuantity: number
     userId: number
 }
-interface CartsResponse {
-    carts: ProductI[]; // масив кошиків
+interface ICartsResponse {
+    carts: IProduct[]; // масив кошиків
     total: number;
     skip: number;
     limit: number;
@@ -30,10 +30,10 @@ interface CartsResponse {
 let cartsDiv = document.getElementById('carts') as HTMLDivElement;
 fetch('https://dummyjson.com/carts')
     .then((value: Response):Promise<any> => value.json())
-    .then((value: CartsResponse):void => {
-        const carts:ProductI[] = value.carts;
+    .then((value: ICartsResponse):void => {
+        const carts:IProduct[] = value.carts;
         console.log(carts);
-        for (const cart of value.carts) {
+        for (const cart of carts) {
             const div: HTMLDivElement = document.createElement('div');
             div.classList.add('cart-container');
             const divWithInfo: HTMLDivElement = document.createElement('div');

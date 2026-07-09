@@ -5,7 +5,7 @@ fetch('https://dummyjson.com/carts')
     .then((value) => {
     const carts = value.carts;
     console.log(carts);
-    for (const cart of value.carts) {
+    for (const cart of carts) {
         const div = document.createElement('div');
         div.classList.add('cart-container');
         const divWithInfo = document.createElement('div');

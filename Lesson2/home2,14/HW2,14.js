@@ -1,7 +1,7 @@
 "use strict";
 let mainRecept = document.getElementById('main-recept');
 fetch('https://dummyjson.com/recipes')
-    .then((value) => value.json())
+    .then(value => value.json())
     .then((value) => {
     const { recipes } = value;
     console.log(recipes);
