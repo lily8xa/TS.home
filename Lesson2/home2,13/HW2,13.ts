@@ -29,7 +29,7 @@ interface ICartsResponse {
 }
 let cartsDiv = document.getElementById('carts') as HTMLDivElement;
 fetch('https://dummyjson.com/carts')
-    .then((value: Response):Promise<any> => value.json())
+    .then((value: Response) => value.json())
     .then((value: ICartsResponse):void => {
         const carts:IProduct[] = value.carts;
         console.log(carts);
